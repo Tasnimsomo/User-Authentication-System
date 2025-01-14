@@ -3,7 +3,12 @@ const mongoose = require('mongoose');
 const userSchema = mongoose.Schema({
     "name": String,
     "email": String,
-    "password": String,
+    "password": {
+        type: String,
+        min: 6,
+        max: 12
+    },
+
     "role": String
 });
 
