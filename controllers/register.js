@@ -22,8 +22,6 @@ exports.register = async (req, res) => {
 
     // create new user and save to database 
     try {
-
-
         const newUser = new User({
             firstName,
             lastName,
