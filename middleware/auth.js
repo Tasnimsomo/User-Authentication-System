@@ -16,3 +16,5 @@ const authenticateToken = async (req, res, next) => {
         return res.sendStatus(403).json({ message: "Invalid token" });
     }
 }
+
+module.exports = authenticateToken;
