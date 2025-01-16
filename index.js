@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
-const router = require('./routes/register_routes');
+const register_router = require('./routes/register_routes');
+const login_router = require('./routes/login_routes');
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
@@ -16,7 +17,8 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Middleware
 app.use(express.json());
-app.use(router);
+app.use(register_router);
+app.use(login_router);
 
 // Routes
 app.get('/', (req, res) => {
