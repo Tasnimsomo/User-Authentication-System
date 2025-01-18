@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
+const passwordValidator = require('./utils/password-validator');
 
 exports.register = async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
@@ -8,6 +9,16 @@ exports.register = async (req, res) => {
     // validate input fields 
     if (!firstName || !lastName || !email || !password) {
         return res.status(400).json({ message: 'Please enter all fields' });
+    }
+
+    // Validate password
+    const { isValid, errors } = passwordValidator(password);
+    if (!isValid) {
+        return res.status(400).json({
+            status: 'error',
+            message: 'Invalid password',
+            errors
+        });
     }
 
     // Check for existing user
