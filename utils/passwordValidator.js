@@ -20,3 +20,6 @@ const passwordValidator = (password) => {
     if (!/[!@#$%^&*]/.test(password)) {
         errors.push('Password must contain at least one special character');
     }
+}
+
+module.exports = passwordValidator;
