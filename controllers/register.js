@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
-const passwordValidator = require('./utils/password-validator');
+const passwordValidator = require('../utils/passwordValidator');
 
 exports.register = async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
