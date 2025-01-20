@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const register_router = require('./routes/register_routes');
 const login_router = require('./routes/login_routes');
-
+const errorHandler = require('./middleware/errorHandler');
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGO_URI)
 app.use(express.json());
 app.use(register_router);
 app.use(login_router);
+app.use(errorHandler);
 
 // Routes
 app.get('/', (req, res) => {
