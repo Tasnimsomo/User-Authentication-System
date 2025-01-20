@@ -9,7 +9,7 @@ const passwordValidator = (password) => {
         errors.push('Password must contain at least one uppercase letter');
     }
 
-    if (!/(a-z)/.test(password)) {
+    if (!/[a-z]/.test(password)) {
         errors.push('Password must contain at least one lowercase letter');
     }
 
@@ -20,6 +20,11 @@ const passwordValidator = (password) => {
     if (!/[!@#$%^&*]/.test(password)) {
         errors.push('Password must contain at least one special character');
     }
+
+    return {
+        isValid: errors.length === 0,  // isValid is true if there are no errors
+        errors: errors                 // errors is the array of validation messages
+    };
 }
 
 module.exports = passwordValidator;
