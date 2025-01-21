@@ -65,4 +65,6 @@
     -5 login attempts per 5 minutes
     -After exceeding wait 5 minutes before trying again.
 
-    
+- **Authentication**
+    -Use JWT token in subsequent requests
+    -Add to authorization header: Bearer your-token-here
