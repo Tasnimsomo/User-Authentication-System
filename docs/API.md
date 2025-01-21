@@ -14,7 +14,7 @@
     "password" : "JohnSmith1234!"
   }
 - **Success Response**:
-    Code: 201
+    Code: 201 Created
     Content:
     ```json
     {
@@ -23,7 +23,7 @@
     }
 
 - **Error Response**:
-    Code: 400
+    Code: 400 Bad Request
     Content:
     ```json
     {
@@ -43,7 +43,7 @@
 }
 
 - **Success Response**:
-    Code: 200
+    Code: 200 OK
     Content:
     ```json
     {
@@ -53,7 +53,7 @@
     }
 
 - **Error Response**:
-    -Code: 400
+    -Code: 400 Bad Request
     -Content:
     ```json
     {
