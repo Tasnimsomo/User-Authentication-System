@@ -61,3 +61,8 @@
         "message": "Invalid credentials"
     }
 
+- **Rate Limiting**:
+    -5 login attempts per 5 minutes
+    -After exceeding wait 5 minutes before trying again.
+
+    
